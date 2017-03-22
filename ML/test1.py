@@ -1,13 +1,14 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn import datasets, linear_model, discriminant_analysis, cross_validation
+from sklearn import datasets, linear_model, discriminant_analysis
+from sklearn.model_selection import train_test_split
 
 
 # 加载数据集（糖尿病数据集）
 def load_data():
     diabetes = datasets.load_diabetes()
-    return cross_validation.train_test_split(diabetes.data, diabetes.target, test_size=0.25, random_state=0)
+    return train_test_split(diabetes.data, diabetes.target, test_size=0.25, random_state=0)
 
 
 # 加载数据集（iris数据集）
@@ -15,7 +16,7 @@ def load_data2():
     iris = datasets.load_iris()
     X_train = iris.data
     y_train = iris.target
-    return cross_validation.train_test_split(X_train, y_train, test_size=0.25, random_state=0, stratify=y_train)
+    return train_test_split(X_train, y_train, test_size=0.25, random_state=0, stratify=y_train)
 
 
 # 线性回归 Coefficients系数/intercept截距
