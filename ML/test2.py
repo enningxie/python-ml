@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.tree import DecisionTreeRegressor
-from sklearn import cross_validation
+from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 
@@ -13,7 +13,7 @@ def create_data(n):
     y[::5] += 3 * (0.5 - np.random.rand(noise_num))
     # print('x:', x)
     # print('y:', y)
-    return cross_validation.train_test_split(x, y, test_size=0.25, random_state=1)
+    return train_test_split(x, y, test_size=0.25, random_state=1)
 
 
 # 测试函数
@@ -83,7 +83,7 @@ def load_data():
     iris = datasets.load_iris()
     x_train = iris.data
     y_train = iris.target
-    return cross_validation.train_test_split(x_train, y_train, test_size=0.25, random_state=0, stratify=y_train)
+    return train_test_split(x_train, y_train, test_size=0.25, random_state=0, stratify=y_train)
 # 这里采用分层采样。因为原始数据集中，前50个样本都是0，中间50个为1，最后50个为2，如果不采用分层采样，那么最后切分得到的测试集就不无偏了
 
 
