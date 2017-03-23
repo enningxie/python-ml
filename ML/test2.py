@@ -83,7 +83,7 @@ def load_data():
     iris = datasets.load_iris()
     x_train = iris.data
     y_train = iris.target
-    return train_test_split(x_train, y_train, test_size=0.25, random_state=0, stratify=y_train)
+    return cdtrain_test_split(x_train, y_train, test_size=0.25, random_state=0, stratify=y_train)
 # 这里采用分层采样。因为原始数据集中，前50个样本都是0，中间50个为1，最后50个为2，如果不采用分层采样，那么最后切分得到的测试集就不无偏了
 
 

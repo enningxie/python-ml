@@ -1,6 +1,6 @@
 # k近邻算法
 import numpy as np
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 from sklearn import neighbors, datasets
 from sklearn import model_selection
 
